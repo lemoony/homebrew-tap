@@ -5,12 +5,20 @@
 class Snipkit < Formula
   desc "Access snippets from your favorite snippet manager without leaving the terminal"
   homepage "https://github.com/lemoony/snippet-kit"
-  version "0.0.1"
+  version "0.0.3"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.3/snipkit_0.0.3_darwin_arm64.tar.gz"
+      sha256 "a67e3909c054c31e2fb02cf344d51b171a3977bb4b3887d7a1733b0d0f4934c5"
+
+      def install
+        bin.install "snipkit"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.1/snipkit_0.0.1_darwin_amd64.tar.gz"
-      sha256 "cef9bda25c93280cfccbeb93065081bc2bd964307fd2effff68aec7a7730f892"
+      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.3/snipkit_0.0.3_darwin_amd64.tar.gz"
+      sha256 "2fb9015e23e53b7503c857cc27512d530ac078d818ecfb65a9b19898e3af17ef"
 
       def install
         bin.install "snipkit"
@@ -19,9 +27,25 @@ class Snipkit < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.3/snipkit_0.0.3_linux_arm64.tar.gz"
+      sha256 "b7741df90f804d93fc29718893a3c3c2eda8b58ed33f356dd31d5f3762140e0f"
+
+      def install
+        bin.install "snipkit"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.3/snipkit_0.0.3_linux_armv6.tar.gz"
+      sha256 "0341a9d5493f3228239cb8b6fca7c96b44f86f0f1cf0e5400d743be4d6f8a3c1"
+
+      def install
+        bin.install "snipkit"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.1/snipkit_0.0.1_linux_amd64.tar.gz"
-      sha256 "345e9096b080a015db1baa08de43a110fdea0dcc174709593c98ad2d5e8eb794"
+      url "https://github.com/lemoony/snippet-kit/releases/download/v0.0.3/snipkit_0.0.3_linux_amd64.tar.gz"
+      sha256 "f7f17dbf76d1346e1254edc93880acc859d2cb8e175c954fdac080aad71b4c8f"
 
       def install
         bin.install "snipkit"
