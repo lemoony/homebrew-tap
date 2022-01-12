@@ -1,4 +1,4 @@
-# Lemoony Tap
+# Homebrew - Custom Tap
 
 ## How do I install these formulae?
 
