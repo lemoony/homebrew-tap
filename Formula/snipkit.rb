@@ -5,20 +5,20 @@
 class Snipkit < Formula
   desc "Access snippets from your favorite snippet manager without leaving the terminal"
   homepage "https://github.com/lemoony/snipkit"
-  version "1.0.0"
+  version "1.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/lemoony/snipkit/releases/download/v1.0.0/snipkit_1.0.0_darwin_arm64.tar.gz"
-      sha256 "44d3532b5d3161269709362641321d526c8201c66aaefad189d758c1d02bf7cf"
+    if Hardware::CPU.intel?
+      url "https://github.com/lemoony/snipkit/releases/download/v1.1.0/snipkit_1.1.0_darwin_amd64.tar.gz"
+      sha256 "0fddc5d839b4c31154b00f7b993bc3556bf06808b778da8f8bd7c00e7bcc1fd9"
 
       def install
         bin.install "snipkit"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/lemoony/snipkit/releases/download/v1.0.0/snipkit_1.0.0_darwin_amd64.tar.gz"
-      sha256 "3e109d42a7eaf1bed34c3f3bcbfa92d2ab28b1cc0460a65373c428b58890383a"
+    if Hardware::CPU.arm?
+      url "https://github.com/lemoony/snipkit/releases/download/v1.1.0/snipkit_1.1.0_darwin_arm64.tar.gz"
+      sha256 "8a6e1cc9e82c7caa5de060dc63f7316c53337e397e66227e4e0cebe429ded767"
 
       def install
         bin.install "snipkit"
@@ -27,25 +27,25 @@ class Snipkit < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/lemoony/snipkit/releases/download/v1.0.0/snipkit_1.0.0_linux_armv6.tar.gz"
-      sha256 "e28cb9b5527a3804f963e49c3dc99264cd853664bd3b02a9031f81076287a345"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/lemoony/snipkit/releases/download/v1.1.0/snipkit_1.1.0_linux_arm64.tar.gz"
+      sha256 "001f6c04bab5c10b6cb88a5bc6ff629641358e8c73423d60405cd7695ea0e19f"
 
       def install
         bin.install "snipkit"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/lemoony/snipkit/releases/download/v1.0.0/snipkit_1.0.0_linux_amd64.tar.gz"
-      sha256 "6f435819643f7b66bf768a46073888b18efd357bc060cbc9cd3ebbb6db500407"
+      url "https://github.com/lemoony/snipkit/releases/download/v1.1.0/snipkit_1.1.0_linux_amd64.tar.gz"
+      sha256 "5bf46bec730911bf79394f56568c22d28b9ada1f40f0cf9f80648d9a14e5c68d"
 
       def install
         bin.install "snipkit"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/lemoony/snipkit/releases/download/v1.0.0/snipkit_1.0.0_linux_arm64.tar.gz"
-      sha256 "b40691d787027d27d1ab842bd59748113daaa2cab08d240f5e0253cf4abe190c"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/lemoony/snipkit/releases/download/v1.1.0/snipkit_1.1.0_linux_armv6.tar.gz"
+      sha256 "4026adde2a15acc5f4422ad4ad1133d4e05dcb3d31b5c7540a54cc1dcdfe1308"
 
       def install
         bin.install "snipkit"
