@@ -10,7 +10,7 @@ class Snipkit < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/lemoony/snipkit/releases/download/v1.4.2/snipkit_1.4.2_darwin_arm64.tar.gz"
-      sha256 "30de08dd1d539d0982f8c633d07c849501d512ef98d9b45821d4f3a02bf76300"
+      sha256 "fcdaae39ffeb89b9191c9e67db1fc9ca40bd687a60d34dc4ed1805227b730293"
 
       def install
         bin.install "snipkit"
@@ -18,7 +18,7 @@ class Snipkit < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/lemoony/snipkit/releases/download/v1.4.2/snipkit_1.4.2_darwin_amd64.tar.gz"
-      sha256 "0cb805eeeb6075152a4fd379d967163aafb4427238140e9016ced1c7dbef9d18"
+      sha256 "2a957f2c40711b0cf3ff9e6308ee8a5130304d3ce3e5e05ef561683fdb2f2133"
 
       def install
         bin.install "snipkit"
@@ -29,7 +29,7 @@ class Snipkit < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/lemoony/snipkit/releases/download/v1.4.2/snipkit_1.4.2_linux_arm64.tar.gz"
-      sha256 "c61eb5e65c8d6fdb1f8cbd5d29c608e778236b84df8ee09e012dd54e9bbf3e70"
+      sha256 "ae22a7141784c2b92bc1ccd3f92f5be31c17d4e670357ed14c232a779bb0f7a7"
 
       def install
         bin.install "snipkit"
@@ -37,7 +37,7 @@ class Snipkit < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/lemoony/snipkit/releases/download/v1.4.2/snipkit_1.4.2_linux_amd64.tar.gz"
-      sha256 "cf3a871c2ed458eecd6467b512bbaba0127a9ec72baef75688bd959bb2c820da"
+      sha256 "3f0af3060cc47a8e172e2808633636b441f84e45124e390dcf9379c16d7f1923"
 
       def install
         bin.install "snipkit"
@@ -45,7 +45,7 @@ class Snipkit < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/lemoony/snipkit/releases/download/v1.4.2/snipkit_1.4.2_linux_armv6.tar.gz"
-      sha256 "90f409246a444d32546f197feb69f55afca3a6aba22014e7e9c09a75008a739e"
+      sha256 "30595563e327f3bedbaf4170c7d342dbadf9f58f64f9afe81023087deccb7b94"
 
       def install
         bin.install "snipkit"
