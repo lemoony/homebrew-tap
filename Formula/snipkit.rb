@@ -38,7 +38,7 @@ class Snipkit < Formula
       end
     end
     on_arm do
-      if !Hardware::CPU.is_64_bit?
+      unless Hardware::CPU.is_64_bit?
         url "https://github.com/lemoony/snipkit/releases/download/v1.5.0/snipkit_1.5.0_linux_armv6.tar.gz"
         sha256 "cd7d8b852fed8f639a7ab92ee3ab2969841b811cec3aebd8139769e44c6342d7"
 
